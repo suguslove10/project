@@ -59,7 +59,7 @@ class AnalyticsPage extends ConsumerWidget {
           crossAxisSpacing: AppConstants.spacing16,
           mainAxisSpacing: AppConstants.spacing16,
           childAspectRatio: isTablet ? 1.2 : 1.5,
-          children: [
+          children: const [
             MetricCard(
               title: 'Total Requests',
               value: '300',
@@ -225,7 +225,7 @@ class AnalyticsPage extends ConsumerWidget {
                       dotData: const FlDotData(show: false),
                       belowBarData: BarAreaData(
                         show: true,
-                        color: AppTheme.primaryColor.withOpacity(0.1),
+                        color: AppTheme.primaryColor.withValues(alpha: 0.1),
                       ),
                     ),
                     LineChartBarData(
@@ -509,7 +509,7 @@ class AnalyticsPage extends ConsumerWidget {
                       dotData: const FlDotData(show: false),
                       belowBarData: BarAreaData(
                         show: true,
-                        color: AppTheme.primaryColor.withOpacity(0.1),
+                        color: AppTheme.primaryColor.withValues(alpha: 0.1),
                       ),
                     ),
                   ],

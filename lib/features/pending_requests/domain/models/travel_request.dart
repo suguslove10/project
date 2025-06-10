@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import '../../../../shared/presentation/widgets/status_badge.dart';
 
 part 'travel_request.g.dart';
 
@@ -109,6 +110,3 @@ extension RequestStatusExtension on RequestStatus {
     }
   }
 }
-
-// Import for BadgeType
-import '../../../../shared/presentation/widgets/status_badge.dart';

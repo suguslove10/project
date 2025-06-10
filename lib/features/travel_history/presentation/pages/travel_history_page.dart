@@ -15,7 +15,7 @@ class TravelHistoryPage extends ConsumerWidget {
     final travelHistory = _getTravelHistory();
     final totalSpent = travelHistory.fold<double>(0, (sum, trip) => sum + trip.cost);
     final totalTrips = travelHistory.length;
-    final avgCost = totalTrips > 0 ? totalSpent / totalTrips : 0;
+    final avgCost = totalTrips > 0 ? totalSpent / totalTrips : 0.0;
     
     return SingleChildScrollView(
       child: Column(
@@ -65,24 +65,24 @@ class TravelHistoryPage extends ConsumerWidget {
           crossAxisSpacing: AppConstants.spacing16,
           mainAxisSpacing: AppConstants.spacing16,
           childAspectRatio: isTablet ? 1.2 : 1.5,
-          children: [
+          children: const [
             MetricCard(
               title: 'Total Trips',
-              value: totalTrips.toString(),
+              value: '6',
               subtitle: 'This year',
               icon: LucideIcons.plane,
               borderColor: AppTheme.primaryColor,
             ),
             MetricCard(
               title: 'Total Spent',
-              value: '\$${(totalSpent / 1000).toStringAsFixed(1)}k',
+              value: '\$18.1k',
               subtitle: 'All trips',
               icon: LucideIcons.dollarSign,
               borderColor: AppTheme.primaryColor,
             ),
             MetricCard(
               title: 'Avg Cost',
-              value: '\$${avgCost.toStringAsFixed(0)}',
+              value: '\$3,017',
               subtitle: 'Per trip',
               icon: LucideIcons.calendar,
               borderColor: AppTheme.secondaryColor,

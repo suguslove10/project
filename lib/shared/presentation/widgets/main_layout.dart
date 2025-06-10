@@ -18,8 +18,6 @@ class MainLayout extends ConsumerStatefulWidget {
 }
 
 class _MainLayoutState extends ConsumerState<MainLayout> {
-  bool _isDrawerOpen = false;
-
   final List<NavigationItem> _navigationItems = [
     NavigationItem(
       icon: LucideIcons.home,
@@ -336,7 +334,7 @@ class _MainLayoutState extends ConsumerState<MainLayout> {
           ),
         ),
         selected: isSelected,
-        selectedTileColor: AppTheme.primaryColor.withOpacity(0.1),
+        selectedTileColor: AppTheme.primaryColor.withValues(alpha: 0.1),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppConstants.radiusSmall),
         ),
@@ -381,12 +379,12 @@ class _MainLayoutState extends ConsumerState<MainLayout> {
           top: BorderSide(color: AppTheme.borderColor),
         ),
       ),
-      child: Row(
+      child: const Row(
         children: [
           CircleAvatar(
             radius: 20,
             backgroundColor: AppTheme.secondaryColor,
-            child: const Text(
+            child: Text(
               'JM',
               style: TextStyle(
                 fontSize: 12,
@@ -394,8 +392,8 @@ class _MainLayoutState extends ConsumerState<MainLayout> {
               ),
             ),
           ),
-          const SizedBox(width: AppConstants.spacing12),
-          const Expanded(
+          SizedBox(width: AppConstants.spacing12),
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -416,7 +414,7 @@ class _MainLayoutState extends ConsumerState<MainLayout> {
               ],
             ),
           ),
-          const Icon(
+          Icon(
             LucideIcons.bell,
             size: 16,
             color: AppTheme.textMuted,

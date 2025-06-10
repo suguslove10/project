@@ -27,12 +27,10 @@ class AppTheme {
         primary: primaryColor,
         secondary: secondaryColor,
         surface: surfaceColor,
-        background: backgroundColor,
         error: errorColor,
         onPrimary: Colors.white,
         onSecondary: textPrimary,
         onSurface: textPrimary,
-        onBackground: textPrimary,
         onError: Colors.white,
       ),
       
@@ -50,8 +48,8 @@ class AppTheme {
         ),
       ),
       
-      // Card Theme
-      cardTheme: CardTheme(
+      // Card Theme - Fixed to use CardThemeData
+      cardTheme: CardThemeData(
         color: surfaceColor,
         elevation: 0,
         shape: RoundedRectangleBorder(

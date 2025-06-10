@@ -5,7 +5,6 @@ import 'package:fl_chart/fl_chart.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/constants/app_constants.dart';
 import '../../../../shared/presentation/widgets/metric_card.dart';
-import '../../../../shared/presentation/widgets/status_badge.dart';
 
 class DashboardPage extends ConsumerWidget {
   const DashboardPage({super.key});
@@ -62,7 +61,7 @@ class DashboardPage extends ConsumerWidget {
           crossAxisSpacing: AppConstants.spacing16,
           mainAxisSpacing: AppConstants.spacing16,
           childAspectRatio: isTablet ? 1.2 : 1.5,
-          children: [
+          children: const [
             MetricCard(
               title: 'Total Requests',
               value: '367',
@@ -218,7 +217,7 @@ class DashboardPage extends ConsumerWidget {
                       dotData: const FlDotData(show: false),
                       belowBarData: BarAreaData(
                         show: true,
-                        color: AppTheme.primaryColor.withOpacity(0.1),
+                        color: AppTheme.primaryColor.withValues(alpha: 0.1),
                       ),
                     ),
                     LineChartBarData(
@@ -231,7 +230,7 @@ class DashboardPage extends ConsumerWidget {
                         FlSpot(5, 65),
                       ],
                       isCurved: true,
-                      color: AppTheme.primaryColor.withOpacity(0.7),
+                      color: AppTheme.primaryColor.withValues(alpha: 0.7),
                       barWidth: 2,
                       dotData: const FlDotData(show: false),
                     ),
